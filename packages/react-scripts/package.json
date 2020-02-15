@@ -1,10 +1,10 @@
 {
   "name": "@priyanknamdeo16/react-scripts",
-  "version": "3.4.3",
+  "version": "3.4.4",
   "description": "Priyank's configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
-    "url": "priyanknamdeo16/create-react-app.git",
+    "url": "priyanknamdeo16/create-react-app",
     "directory": "packages/react-scripts"
   },
   "license": "MIT",
