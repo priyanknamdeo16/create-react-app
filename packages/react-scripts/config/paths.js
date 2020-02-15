@@ -43,6 +43,13 @@ const moduleFileExtensions = [
   'jsx',
 ];
 
+// following 4 lines are added by priyank
+const REACT_APP_APPINDEXJS = process.env.REACT_APP_APPINDEXJS || "";
+const REACT_APP_APPBUILD = process.env.REACT_APP_APPBUILD || "";
+const REACT_APP_APPPUBLIC = process.env.REACT_APP_APPPUBLIC || "";
+const REACT_APP_APPHTML = process.env.REACT_APP_APPHTML || "";
+
+
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
   const extension = moduleFileExtensions.find(extension =>
@@ -60,10 +67,10 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appBuild: resolveApp(REACT_APP_APPBUILD),
+  appPublic: resolveApp(REACT_APP_APPPUBLIC),
+  appHtml: resolveApp(REACT_APP_APPHTML),
+  appIndexJs: resolveModule(resolveApp, REACT_APP_APPINDEXJS),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
@@ -82,10 +89,10 @@ const resolveOwn = relativePath => path.resolve(__dirname, '..', relativePath);
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appBuild: resolveApp(REACT_APP_APPBUILD),
+  appPublic: resolveApp(REACT_APP_APPPUBLIC),
+  appHtml: resolveApp(REACT_APP_APPHTML),
+  appIndexJs: resolveModule(resolveApp, REACT_APP_APPINDEXJS),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
