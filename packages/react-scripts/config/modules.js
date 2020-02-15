@@ -81,6 +81,13 @@ function getWebpackAliases(options = {}) {
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
       src: paths.appSrc,
+      TARGET_BUILD: path.resolve(paths.appSrc, "hilti"),
+      ADMIN_TARGET_BUILD: path.resolve(paths.appSrc, "hilti"),
+      "custom-styled-components": path.resolve(paths.appSrc, "common/themeConfig/styledComponents.ts"),
+      "custom-styled-components-admin": path.resolve(paths.appSrc, "common/themeConfig/styledComponents.ts"),
+      "custom-actions": path.resolve(paths.appSrc, "common/actionConstants/index.ts"),
+      "custom-actions-admin": path.resolve(paths.appSrc, "common/actionConstants/index.ts"),
+      "custom-utils": path.resolve(paths.appSrc, "common/utils/index.ts"),
     };
   }
 }
