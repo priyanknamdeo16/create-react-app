@@ -78,11 +78,13 @@ function getWebpackAliases(options = {}) {
 
   const baseUrlResolved = path.resolve(paths.appPath, baseUrl);
 
+  const REACT_APP_BUILD = process.env.REACT_APP_BUILD || "";
+
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
       src: paths.appSrc,
-      TARGET_BUILD: path.resolve(paths.appSrc, "hilti"),
-      ADMIN_TARGET_BUILD: path.resolve(paths.appSrc, "hilti"),
+      TARGET_BUILD: path.resolve(paths.appSrc, REACT_APP_BUILD),
+      ADMIN_TARGET_BUILD: path.resolve(paths.appSrc, REACT_APP_BUILD),
       "custom-styled-components": path.resolve(paths.appSrc, "common/themeConfig/styledComponents.ts"),
       "custom-styled-components-admin": path.resolve(paths.appSrc, "common/themeConfig/styledComponents.ts"),
       "custom-actions": path.resolve(paths.appSrc, "common/actionConstants/index.ts"),
